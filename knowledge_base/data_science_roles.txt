@@ -1,0 +1,184 @@
+DATA SCIENCE & TECHNOLOGY CAREER ROLES
+========================================
+
+DATA SCIENTIST
+--------------
+A Data Scientist extracts insights from large datasets using statistical analysis, machine learning, and data visualisation. They bridge the gap between raw data and business decisions.
+
+Core Responsibilities:
+- Design and implement machine learning models for prediction, classification, and clustering
+- Conduct exploratory data analysis (EDA) to uncover patterns and trends
+- Collaborate with stakeholders to frame business problems as data problems
+- Build and maintain data pipelines for model training and evaluation
+- Communicate findings through reports, dashboards, and presentations
+- A/B test hypotheses and validate model performance in production
+
+Required Qualifications:
+- Bachelor's or Master's degree in Statistics, Mathematics, Computer Science, or related field
+- Strong programming skills in Python or R
+- Proficiency in SQL for data extraction
+- Knowledge of machine learning algorithms (regression, classification, clustering, ensembles)
+- Experience with ML libraries: scikit-learn, XGBoost, LightGBM
+- Familiarity with data visualisation tools (Matplotlib, Seaborn, Tableau, Power BI)
+
+Seniority Levels:
+- Junior Data Scientist (0-2 years): Works under guidance, focuses on EDA and model training
+- Mid-level Data Scientist (2-5 years): Leads individual projects, owns model lifecycle
+- Senior Data Scientist (5+ years): Drives strategy, mentors juniors, shapes data culture
+- Principal/Staff Data Scientist (8+ years): Cross-org influence, defines best practices
+
+---
+
+MACHINE LEARNING ENGINEER
+--------------------------
+An ML Engineer focuses on deploying, scaling, and maintaining machine learning models in production. They combine software engineering expertise with ML knowledge.
+
+Core Responsibilities:
+- Build scalable ML pipelines and inference systems
+- Optimise model performance for production (latency, throughput, memory)
+- Implement CI/CD pipelines for model deployment (MLOps)
+- Monitor model drift and retrain pipelines
+- Collaborate with Data Scientists to productionise research prototypes
+- Design feature stores and real-time feature engineering
+
+Required Qualifications:
+- Strong software engineering skills (Python, Java, Scala, or Go)
+- Experience with ML frameworks: TensorFlow, PyTorch, JAX
+- Knowledge of containerisation and orchestration (Docker, Kubernetes)
+- Familiarity with cloud platforms (AWS SageMaker, GCP Vertex AI, Azure ML)
+- Understanding of distributed computing (Spark, Ray)
+- MLOps tools: MLflow, Kubeflow, Airflow, Weights & Biases
+
+Seniority Levels:
+- Junior ML Engineer (0-2 years): Implements existing designs, assists with deployment
+- Mid-level ML Engineer (2-5 years): Owns ML services end-to-end
+- Senior ML Engineer (5+ years): Designs ML platforms, guides architectural decisions
+- Staff/Principal ML Engineer (8+ years): Defines engineering standards across teams
+
+---
+
+DATA ENGINEER
+-------------
+A Data Engineer builds and maintains the infrastructure that makes data accessible and reliable for analysts and scientists. They are the backbone of any data-driven organisation.
+
+Core Responsibilities:
+- Design, build, and maintain ETL/ELT pipelines
+- Architect and manage data warehouses and data lakes
+- Ensure data quality, reliability, and governance
+- Build real-time streaming data pipelines
+- Optimise query performance and storage costs
+- Collaborate with analysts and scientists on data modelling
+
+Required Qualifications:
+- Proficiency in SQL (advanced) and Python or Scala
+- Experience with data warehouse platforms (Snowflake, BigQuery, Redshift, Databricks)
+- Knowledge of workflow orchestration tools (Apache Airflow, Prefect, dbt)
+- Familiarity with streaming technologies (Apache Kafka, Spark Streaming, Flink)
+- Understanding of data modelling concepts (star schema, data vault)
+- Cloud infrastructure experience (AWS, GCP, or Azure)
+
+Seniority Levels:
+- Junior Data Engineer (0-2 years): Maintains existing pipelines, writes SQL queries
+- Mid-level Data Engineer (2-5 years): Designs new pipelines and data models
+- Senior Data Engineer (5+ years): Architects data platforms, drives data governance
+- Principal Data Engineer (8+ years): Cross-team data strategy and infrastructure
+
+---
+
+DATA ANALYST
+------------
+A Data Analyst translates data into actionable business insights. They are skilled at querying databases, building dashboards, and communicating findings to non-technical stakeholders.
+
+Core Responsibilities:
+- Query and aggregate data from multiple sources using SQL
+- Build interactive dashboards and reports (Tableau, Power BI, Looker)
+- Conduct ad-hoc analyses to answer business questions
+- Monitor KPIs and business metrics
+- Identify trends and anomalies in business data
+- Present findings to business stakeholders
+
+Required Qualifications:
+- Strong SQL skills (mandatory)
+- Experience with BI tools (Tableau, Power BI, Looker, Metabase)
+- Basic Python or R for data manipulation (Pandas, dplyr)
+- Statistical knowledge: descriptive statistics, correlation, basic hypothesis testing
+- Business acumen and strong communication skills
+- Excel/Google Sheets proficiency
+
+Seniority Levels:
+- Junior Data Analyst (0-2 years): Runs existing reports, answers specific data questions
+- Mid-level Data Analyst (2-4 years): Builds dashboards, conducts independent analyses
+- Senior Data Analyst (4+ years): Defines metrics frameworks, influences data strategy
+- Lead Analyst / Analytics Manager (6+ years): Manages analytics function or team
+
+---
+
+AI RESEARCH SCIENTIST
+----------------------
+An AI Research Scientist conducts cutting-edge research to advance the state of artificial intelligence. They publish papers, develop novel algorithms, and push the boundaries of what AI can do.
+
+Core Responsibilities:
+- Design and run experiments to test novel ML hypotheses
+- Publish research papers at top conferences (NeurIPS, ICML, ICLR, ACL)
+- Implement and evaluate new model architectures
+- Stay current with latest research and synthesise findings
+- Collaborate with engineering teams to transition research to products
+- Mentor junior researchers and interns
+
+Required Qualifications:
+- PhD in Computer Science, Mathematics, Statistics, or related field (strongly preferred)
+- Deep expertise in a research area (NLP, computer vision, reinforcement learning, etc.)
+- Strong mathematical foundations (linear algebra, calculus, probability theory)
+- Publications at top-tier conferences or journals
+- Proficiency in Python, PyTorch or JAX
+- Experience with large-scale distributed training
+
+Seniority Levels:
+- Research Intern / Resident: Student or recent graduate, supervised research
+- Research Scientist: Independent research contributor, 2-5 years post-PhD
+- Senior Research Scientist: Leads research directions, 5-10 years
+- Principal / Distinguished Research Scientist: Defines field-level research agenda
+
+---
+
+MLOPS ENGINEER
+--------------
+An MLOps Engineer specialises in the operational aspects of machine learning systems — automating, monitoring, and scaling the entire ML lifecycle.
+
+Core Responsibilities:
+- Build and maintain ML training and serving infrastructure
+- Implement automated model testing and validation pipelines
+- Set up monitoring for model performance and data drift
+- Manage feature stores for real-time and batch feature serving
+- Automate model retraining and deployment workflows
+- Ensure reproducibility and traceability of ML experiments
+
+Required Qualifications:
+- Strong DevOps/infrastructure background (Kubernetes, Terraform, CI/CD)
+- ML fundamentals to understand what's being deployed
+- Experience with MLOps platforms: MLflow, Kubeflow, SageMaker Pipelines, Vertex AI
+- Monitoring tools: Prometheus, Grafana, Evidently AI, Fiddler
+- Programming: Python, Bash, Go
+- Containerisation: Docker, Kubernetes
+
+---
+
+BUSINESS INTELLIGENCE (BI) DEVELOPER
+--------------------------------------
+A BI Developer designs and builds data infrastructure to support business reporting and analytics. They sit between data engineering and analytics.
+
+Core Responsibilities:
+- Design and build semantic layers and data models
+- Develop and maintain BI dashboards and reports
+- Optimise database queries for reporting performance
+- Work with stakeholders to define KPIs and metrics
+- Manage BI platform administration (Tableau Server, Power BI Service)
+- Implement row-level security and data governance
+
+Required Qualifications:
+- Advanced SQL skills
+- Proficiency in BI platforms (Tableau, Power BI, Looker, dbt)
+- Understanding of data warehouse design
+- Basic ETL/ELT knowledge
+- Business process understanding
+- DAX, MDX, or LookML proficiency depending on platform

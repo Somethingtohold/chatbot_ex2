@@ -1,0 +1,221 @@
+CAREER PATHS IN DATA SCIENCE & TECHNOLOGY
+==========================================
+
+TYPICAL CAREER PROGRESSION TIMELINES
+--------------------------------------
+
+Data Analyst Path:
+  Junior Data Analyst (0-2 years)
+    → Data Analyst (2-4 years)
+      → Senior Data Analyst (4-6 years)
+        → Lead Analyst / Analytics Manager (6-9 years)
+          → Head of Analytics / Director of Analytics (9+ years)
+
+Data Scientist Path:
+  Junior Data Scientist (0-2 years)
+    → Data Scientist (2-5 years)
+      → Senior Data Scientist (5-8 years)
+        → Lead / Principal Data Scientist (8-12 years)
+          → Director of Data Science / VP of Data (12+ years)
+            → Chief Data Officer (CDO) (15+ years)
+
+Machine Learning Engineer Path:
+  Junior ML Engineer (0-2 years)
+    → ML Engineer (2-5 years)
+      → Senior ML Engineer (5-8 years)
+        → Staff ML Engineer (8-12 years)
+          → Principal ML Engineer (12+ years)
+            → Distinguished Engineer / Fellow (rare, 15+ years)
+
+Data Engineer Path:
+  Junior Data Engineer (0-2 years)
+    → Data Engineer (2-5 years)
+      → Senior Data Engineer (5-8 years)
+        → Staff / Principal Data Engineer (8-12 years)
+          → Head of Data Engineering (10+ years)
+
+Research Scientist Path (Academic):
+  PhD Student (4-6 years)
+    → Postdoctoral Researcher (2-4 years)
+      → Assistant Professor / Research Scientist (varies)
+        → Associate Professor / Senior Researcher
+          → Full Professor / Distinguished Researcher
+
+Research Scientist Path (Industry):
+  Research Intern / Resident
+    → Research Scientist (PhD + 0-3 years)
+      → Senior Research Scientist (3-7 years)
+        → Principal Research Scientist (7-12 years)
+          → Distinguished Scientist / VP Research (12+ years)
+
+---
+
+CAREER TRANSITIONS
+-------------------
+
+From Data Analyst to Data Scientist:
+- Bridge the gap by learning machine learning (scikit-learn, model evaluation)
+- Build a portfolio of ML projects on Kaggle or personal datasets
+- Learn Python deeply if currently focused on SQL/BI tools
+- Take courses: fast.ai, Andrew Ng's ML Specialisation on Coursera
+- Typical transition time: 1-2 years with deliberate upskilling
+- Entry point: Often through "Analytics Engineer" or hybrid analyst/scientist roles
+
+From Data Analyst to Data Engineer:
+- Focus on Python programming and SQL at scale
+- Learn workflow orchestration tools (Airflow, dbt)
+- Build ETL pipeline projects (even personal ones count)
+- Learn cloud data services (BigQuery, Redshift, S3)
+- Typical transition time: 1-2 years
+
+From Software Engineer to ML Engineer:
+- Add ML fundamentals: take Andrew Ng's ML course, fast.ai
+- Learn Python data stack if coming from other languages
+- Build projects that combine software engineering with ML models
+- Strongest transition path due to existing engineering skills
+- Typical transition time: 6-18 months
+
+From Data Scientist to ML Engineer:
+- Strengthen software engineering practices (clean code, testing, CI/CD)
+- Learn containerisation (Docker, Kubernetes)
+- Gain experience with production systems and MLOps tools
+- Focus on the "engineering" aspect: scalability, reliability, performance
+- Typical transition time: 1-2 years
+
+From Data Scientist to Research Scientist:
+- Pursue a PhD or contribute to open-source ML research
+- Publish or contribute to academic papers
+- Deep specialisation in a subfield (NLP, CV, RL, etc.)
+- Work on novel problems rather than applied business problems
+- Very competitive without a PhD from a top institution
+
+From Academic Research to Industry:
+- Highlight transferable skills: Python, statistics, problem-solving, publication record
+- Focus on applied ML roles at companies with research divisions (Google, Meta, Microsoft)
+- Be prepared to adapt to product-focused goals rather than pure research
+
+---
+
+INDIVIDUAL CONTRIBUTOR (IC) VS MANAGEMENT TRACKS
+--------------------------------------------------
+
+IC Track (Technical Leadership):
+- Staff Engineer / Senior Scientist → Principal → Distinguished → Fellow
+- Deep technical expertise, cross-team technical influence
+- Architecture decisions, setting technical standards
+- Mentoring without direct reports
+- Preferred by those who want to stay hands-on with technology
+
+Management Track:
+- Senior Scientist/Engineer → Tech Lead → Manager → Director → VP → C-Suite
+- People management, strategic planning, hiring
+- Cross-functional collaboration and stakeholder management
+- Removed from day-to-day coding as seniority increases
+- Requires strong communication, EQ, and organisational skills
+
+Most companies offer both tracks at large organisations (Google, Meta, Amazon, Microsoft). At startups, the distinction is often blurred.
+
+---
+
+ENTRY PATHS INTO DATA SCIENCE
+-------------------------------
+
+University Degree:
+- Computer Science, Statistics, Mathematics, Physics, Economics
+- A degree is still the most common path but not the only one
+- Graduate programmes (MSc, PhD) accelerate the path to senior roles
+
+Bootcamps and Online Courses:
+- Effective for career changers with some technical background
+- Must be supplemented with a strong portfolio
+- Popular programmes: Turing College, Springboard, BrainStation, General Assembly
+- Credibility comes from the portfolio, not the bootcamp brand
+
+Self-Taught:
+- Requires extreme discipline and a strong portfolio
+- Online resources: fast.ai, Kaggle, Towards Data Science, Papers With Code
+- Most successful when combined with real projects or contributions to open source
+
+Kaggle Competitions:
+- Excellent for building ML skills and visibility
+- Top placements are highly valued by ML-focused employers
+- Kaggle Notebooks demonstrate practical skills
+
+Internal Transitions:
+- Moving from a business analyst, software engineer, or finance role within the same company
+- Often underrated — internal knowledge + new skills = strong value proposition
+
+---
+
+SPECIALISATION AREAS
+---------------------
+
+Natural Language Processing (NLP) / Large Language Models:
+- Extremely high demand in 2024-2025 due to the GenAI revolution
+- Skills: Transformers, HuggingFace, fine-tuning, RAG, LangChain
+- Roles: NLP Engineer, LLM Engineer, AI Engineer, Conversational AI
+
+Computer Vision:
+- Strong demand in manufacturing, healthcare, autonomous vehicles, retail
+- Skills: CNNs, object detection (YOLO), segmentation, image generation
+- Roles: Computer Vision Engineer, Perception Engineer
+
+Reinforcement Learning:
+- Niche but growing (robotics, gaming, recommendation systems, AlphaFold)
+- Requires strong mathematical foundations
+- Roles: RL Researcher, Robotics ML Engineer
+
+Time Series & Forecasting:
+- Finance, supply chain, energy, retail
+- Skills: ARIMA, Prophet, temporal fusion transformers, LSTMs
+- Roles: Quantitative Analyst, Forecasting Data Scientist
+
+Recommendation Systems:
+- E-commerce, streaming, social media
+- Skills: Collaborative filtering, matrix factorisation, deep learning-based RecSys
+- Roles: Recommendation Systems Engineer, Personalisation Scientist
+
+MLOps / AI Platform:
+- High demand as companies scale their ML infrastructure
+- Skills: Kubernetes, MLflow, feature stores, model monitoring
+- Roles: MLOps Engineer, ML Platform Engineer, AI Infrastructure Engineer
+
+---
+
+COMPANY TYPES AND THEIR IMPACT ON CAREERS
+------------------------------------------
+
+Big Tech (Google, Meta, Microsoft, Amazon, Apple):
+- Highest salaries and best benefits
+- Access to the largest scale infrastructure and data
+- Slower career progression due to competition
+- Strong brand for future opportunities
+- Highly structured levelling systems (L3-L10 at Google, etc.)
+
+AI-First Companies (OpenAI, Anthropic, Mistral, Cohere, Hugging Face):
+- Cutting-edge AI work, direct impact on AI advancement
+- Competitive salaries, strong equity upside
+- Fast-moving, less structured than big tech
+- Excellent for building expertise in LLMs and generative AI
+
+Mid-Size Tech Companies:
+- Faster career progression (can reach senior/lead in 3-4 years)
+- More ownership and autonomy over projects
+- Good balance of compensation and growth
+
+Startups (< 50 employees):
+- High equity, lower base salary typically
+- Wear many hats — great for learning breadth
+- High risk, high reward
+- May not have established data culture or infrastructure
+
+Finance/Banking (Hedge funds, investment banks, FinTech):
+- Quantitative roles among the highest paid in data science
+- Competitive, highly structured, often require strong mathematics
+- Quant roles at hedge funds can reach €200k-€500k+ for experienced professionals
+
+Consulting (McKinsey QuantumBlack, Deloitte AI, Accenture AI):
+- Exposure to diverse industries and problems
+- Fast learning curve, good for career switchers
+- Travel can be demanding
+- Good stepping stone to industry roles

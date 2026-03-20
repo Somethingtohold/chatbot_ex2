@@ -1,0 +1,85 @@
+SALARY DATA FOR DATA SCIENCE & TECHNOLOGY ROLES — EUROPE (2024-2025)
+=====================================================================
+
+NOTE: Salaries vary significantly by company, location, individual skills, and market conditions.
+These figures represent market benchmarks based on industry surveys and job market data.
+All figures are annual gross salary in the specified currency.
+
+---
+
+GERMANY (EUR)
+-------------
+
+Data Analyst:        €35,000 - €75,000 (junior to senior)
+Data Scientist:      €50,000 - €110,000 (junior to senior)
+ML Engineer:         €60,000 - €130,000 (junior to senior)
+Data Engineer:       €48,000 - €105,000 (junior to senior)
+
+---
+
+NETHERLANDS (EUR)
+-----------------
+
+Data Analyst:        €38,000 - €78,000
+Data Scientist:      €55,000 - €115,000
+ML Engineer:         €65,000 - €135,000
+Data Engineer:       €52,000 - €110,000
+
+---
+
+FRANCE — PARIS (EUR)
+---------------------
+
+Data Analyst:        €35,000 - €70,000
+Data Scientist:      €48,000 - €105,000
+ML Engineer:         €58,000 - €120,000
+Data Engineer:       €46,000 - €100,000
+
+---
+
+SPAIN — BARCELONA / MADRID (EUR)
+---------------------------------
+
+Data Analyst:        €25,000 - €55,000
+Data Scientist:      €35,000 - €80,000
+ML Engineer:         €42,000 - €95,000
+Data Engineer:       €35,000 - €78,000
+
+---
+
+POLAND — WARSAW / KRAKÓW (EUR)
+-------------------------------
+
+Data Analyst:        €15,000 - €40,000
+Data Scientist:      €25,000 - €65,000
+ML Engineer:         €30,000 - €80,000
+Data Engineer:       €25,000 - €70,000
+
+---
+
+LITHUANIA / BALTIC STATES (EUR)
+--------------------------------
+
+Data Scientist:      €20,000 - €55,000
+ML Engineer:         €25,000 - €65,000
+Data Engineer:       €20,000 - €58,000
+
+---
+
+FACTORS THAT SIGNIFICANTLY AFFECT SALARY
+------------------------------------------
+
+Upward factors (increase salary):
+  + PhD from a top university: +15-30% for research roles
+  + Specialisation in high-demand areas (LLMs, GenAI, MLOps)
+  + Big tech or well-known startup experience on CV
+  + Proficiency in multiple cloud platforms
+  + 2+ years of production ML experience
+  + Spanish, German, or French language skills in respective countries
+
+Downward factors (may reduce offers):
+  - Bootcamp as primary credential without strong portfolio
+  - Long gaps in employment without explanation
+  - Narrow skill set (only one domain or technology)
+  - Inability to communicate technical findings clearly
+
