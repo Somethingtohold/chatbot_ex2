@@ -66,7 +66,7 @@ streamlit run app.py
 - `YOUTUBE_API_KEY` — [console.cloud.google.com](https://console.cloud.google.com)
 
 
-## Applied improvements / learning from previous Sprint feedback
+## Applied improvements / learnings from previous Sprint feedback
 
 
 | No. | Previous mistake | Improvement |
@@ -75,7 +75,7 @@ streamlit run app.py
 | 2 | Dependency versions not pinned | Pinned dependencies to known-good exact versions in requirements.txt. |
 | 3 | Approximate token estimation | Use tiktoken to compute accurate token counts for prompts and responses. |
 | 4 | No privacy or data‑retention notice | Added a brief privacy/data‑retention notice in the UI describing what data is stored, retention period, and user opt-out/contact info. |
-| 5 | Opaque system prompt / secrets handling | Wrapped secrets access in try/except. |
+| 5 | Opaque system prompt set-up | Wrapped in try/except. |
 | 6 | Single-file application limits maintainability | Refactored into a small package (separate app, tools, RAG, ingestion modules) as shown in the Project Structure. |
 
 
