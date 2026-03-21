@@ -72,7 +72,7 @@ streamlit run app.py
 | No. | Previous mistake | Improvement |
 |-----:|------------------|-------------|
 | 1 | Missing .gitignore (not committed) | Addded a project .gitignore with sensible entries and committed it to the repo. |
-| 2 | Dependency versions not pinned | Pinned dependencies to known-good exact versions in requirements.txt (or use a constraints file / lockfile). |
+| 2 | Dependency versions not pinned | Pinned dependencies to known-good exact versions in requirements.txt. |
 | 3 | Approximate token estimation | Use tiktoken to compute accurate token counts for prompts and responses. |
 | 4 | No privacy or data‑retention notice | Added a brief privacy/data‑retention notice in the UI describing what data is stored, retention period, and user opt-out/contact info. |
 | 5 | Opaque system prompt / secrets handling | Wrapped secrets access in try/except. |
