@@ -15,7 +15,6 @@ Features:
 
 import logging
 import os
-import time
 from pathlib import Path
 
 import tiktoken
@@ -28,9 +27,8 @@ from langchain_openai import ChatOpenAI
 
 load_dotenv()
 
-# ---------------------------------------------------------------------------
 # Logging
-# ---------------------------------------------------------------------------
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
@@ -42,6 +40,7 @@ MAX_REQUESTS_PER_SESSION = 20
 MAX_INPUT_LENGTH = 1000
 MODEL_NAME = "gpt-4o-mini"
 
+# Load system prompt from file
 try:
     SYSTEM_PROMPT = Path("system_prompt.txt").read_text(encoding="utf-8")
 except Exception as e:
@@ -49,9 +48,8 @@ except Exception as e:
     SYSTEM_PROMPT = None
 
 
-# ---------------------------------------------------------------------------
 # Cached initialisation (only runs once per session)
-# ---------------------------------------------------------------------------
+
 @st.cache_resource(show_spinner="Initialising knowledge base...")
 def initialise_agent():
     """
@@ -73,7 +71,7 @@ def initialise_agent():
     )
 
     vectorstore = get_vectorstore()
-    retriever = get_retriever(vectorstore, llm)
+    retriever = get_retriever(vectorstore)
     retriever_tool = build_retriever_tool(retriever)
 
     tools = [
@@ -129,9 +127,8 @@ def run_agent(query: str, chat_history: list, context: str, agent_executor) -> d
     })
 
 
-# ---------------------------------------------------------------------------
 # Input validation
-# ---------------------------------------------------------------------------
+
 def validate_input(text: str) -> tuple[bool, str]:
     """Return (is_valid, error_message)."""
     text = text.strip()
@@ -147,16 +144,14 @@ def validate_input(text: str) -> tuple[bool, str]:
     return True, ""
 
 
-# ---------------------------------------------------------------------------
 # Session-state helpers
-# ---------------------------------------------------------------------------
+
 def init_session_state():
     defaults = {
         "messages": [],
         "request_count": 0,
         "sources": {},
         "tool_calls": {},
-        "last_request_time": 0.0,
         "total_tokens": 0,
     }
     for key, value in defaults.items():
@@ -186,24 +181,12 @@ def parse_tool_calls(intermediate_steps: list) -> list[dict]:
         })
     return calls
 
-
-# ---------------------------------------------------------------------------
-# UI helpers
-# ---------------------------------------------------------------------------
-TOOL_ICONS = {
-    "career_knowledge_search": "",
-    "estimate_salary": "",
-    "fetch_recent_jobs": "",
-    "course_recommender": "",
-}
-
 TOOL_LABELS = {
     "career_knowledge_search": "Knowledge Base Search",
     "estimate_salary": "Salary Estimator",
     "fetch_recent_jobs": "Recent Job Openings",
     "course_recommender": "Course Recommender",
 }
-
 
 def render_tool_calls(calls: list[dict]):
     """Render tool call details in an expander."""
@@ -212,9 +195,8 @@ def render_tool_calls(calls: list[dict]):
     with st.expander(f"Tools used ({len(calls)})", expanded=False):
         for call in calls:
             tool_name = call["tool"]
-            icon = TOOL_ICONS.get(tool_name, "🔧")
             label = TOOL_LABELS.get(tool_name, tool_name)
-            st.markdown(f"**{icon} {label}**")
+            st.markdown(f"**{label}**")
             if isinstance(call["input"], dict):
                 for k, v in call["input"].items():
                     st.markdown(f"- *{k}:* `{v}`")
@@ -256,11 +238,10 @@ def render_sources(docs: list):
             st.markdown("")
 
 
-# ---------------------------------------------------------------------------
 # Main app
-# ---------------------------------------------------------------------------
+
 def main():
-    # ── Page config ──────────────────────────────────────────────────────
+    # Page config 
     st.set_page_config(
         page_title="Career Advisor Bot",
         page_icon="🧭",
@@ -270,7 +251,7 @@ def main():
 
     init_session_state()
 
-    # ── Sidebar ───────────────────────────────────────────────────────────
+    # Sidebar
     with st.sidebar:
         st.title("Career Advisor Bot")
         st.markdown("*Specialising in Data Science & Technology Careers*")
@@ -278,8 +259,8 @@ def main():
 
         st.subheader("About")
         st.markdown(
-            "This bot uses **Retrieval-Augmented Generation (RAG)** with "
-            "**Multi-Query Retrieval** to provide expert career advice grounded "
+            "This bot uses **Retrieval-Augmented Generation (RAG)** "
+            "to provide expert career advice grounded "
             "in a curated knowledge base.\n\n"
             "**Tools available:**\n"
             "- Salary estimator\n"
@@ -328,7 +309,7 @@ def main():
             unsafe_allow_html=True,
         )
 
-    # ── Main content ─────────────────────────────────────────────────────
+    # Main content 
     st.title("Career Advisor Bot")
     st.markdown(
         "Your AI-powered guide for data science and technology career questions. "
@@ -351,7 +332,7 @@ def main():
         st.error(f"**Initialisation failed:** {exc}")
         st.stop()
 
-    # ── Render conversation history ───────────────────────────────────────
+    # Render conversation history 
     for idx, msg in enumerate(st.session_state.messages):
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
@@ -384,12 +365,6 @@ def main():
             )
             st.stop()
 
-        # Simple per-request throttle (min 1 second between requests)
-        now = time.time()
-        elapsed = now - st.session_state.last_request_time
-        if elapsed < 1.0:
-            time.sleep(1.0 - elapsed)
-
         # Display user message
         with st.chat_message("user"):
             st.markdown(user_input)
@@ -416,7 +391,6 @@ def main():
                     st.session_state.tool_calls[msg_idx] = tool_calls
                     st.session_state.sources[msg_idx] = source_docs
                     st.session_state.request_count += 1
-                    st.session_state.last_request_time = time.time()
                     st.session_state.total_tokens += count_tokens(user_input + context + answer)
 
                     st.markdown(answer)
