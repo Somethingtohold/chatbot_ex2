@@ -92,7 +92,7 @@ streamlit run app.py
 chatbot_ex2/
 ├── app.py                  # Streamlit application
 ├── tools.py                # LangChain tools (salary, jobs, courses)
-├── rag.py                  # RAG pipeline with MultiQueryRetriever
+├── rag.py                  # RAG pipeline
 ├── ingest_wef.py           # WEF Future of Jobs 2025 report ingestion
 ├── system_prompt.txt       # System prompt
 ├── knowledge_base/         # Domain knowledge files
