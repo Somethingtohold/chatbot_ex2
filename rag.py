@@ -1,21 +1,20 @@
 """
 Career Advisor Bot — RAG Pipeline
-Implements:
-  - Document loading from knowledge_base/
-  - MultiQueryRetriever for query translation (advanced RAG)
+What it does:
+  - Document loading from knowledge_base
+  - Chunking with RecursiveCharacterTextSplitter
+  - Similarity search via ChromaDB embeddings
 """
 import logging
-import os
 from pathlib import Path
-from langchain_classic.retrievers.multi_query import MultiQueryRetriever
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.tools import Tool
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import DirectoryLoader, TextLoader
 from langchain_core.documents import Document
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_openai import OpenAIEmbeddings
 
-# Suppress verbose HTTP logs from chromadb / openai
+# Suppress logging noise
 logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("chromadb").setLevel(logging.WARNING)
 logging.getLogger("langchain.retrievers.multi_query").setLevel(logging.INFO)
@@ -27,7 +26,7 @@ BASE_DIR = Path(__file__).parent
 KB_DIR = BASE_DIR / "knowledge_base"
 CHROMA_DIR = BASE_DIR / "chroma_db"
 
-# Chunking parameters
+# Chunking constants
 CHUNK_SIZE = 800
 CHUNK_OVERLAP = 120
 COLLECTION_NAME = "career_advisor_kb"
@@ -97,9 +96,8 @@ def _load_vectorstore(embeddings: OpenAIEmbeddings) -> Chroma:
 
 def _vectorstore_is_current() -> bool:
     """
-    Check whether the persisted vectorstore exists and is not stale.
-    We consider it stale if any knowledge base file is newer than the
-    chroma_db directory.
+    Return True if the saved vectorstore exists and is up to date.
+    It's out of date if any file in knowledge_base/ is newer than chroma_db/.
     """
     if not CHROMA_DIR.exists():
         return False
@@ -133,29 +131,17 @@ def get_vectorstore(force_rebuild: bool = False) -> Chroma:
     return _build_vectorstore(chunks, embeddings)
 
 
-def get_retriever(vectorstore: Chroma, llm: ChatOpenAI) -> MultiQueryRetriever:
+def get_retriever(vectorstore: Chroma):
     """
-    Build a MultiQueryRetriever on top of the vectorstore.
-
-    MultiQueryRetriever uses the LLM to generate *multiple* alternative
-    phrasings of the user's query, runs each through the vector store,
-    and merges the results — dramatically improving recall compared to
-    a single-query retriever.
+    Build a standard similarity retriever on top of the vectorstore.
 
     Args:
         vectorstore: Initialised ChromaDB vectorstore.
-        llm:         LLM used to generate query variants.
     """
-    base_retriever = vectorstore.as_retriever(
+    return vectorstore.as_retriever(
         search_type="similarity",
         search_kwargs={"k": 4},
     )
-    retriever = MultiQueryRetriever.from_llm(
-        retriever=base_retriever,
-        llm=llm,
-        include_original=True,   # also run the original query
-    )
-    return retriever
 
 
 def format_retrieved_docs(docs: list[Document]) -> str:
@@ -164,15 +150,7 @@ def format_retrieved_docs(docs: list[Document]) -> str:
         return "No relevant information found in the knowledge base."
 
     formatted = []
-    seen_contents = set()
-
     for i, doc in enumerate(docs, 1):
-        # De-duplicate chunks that may appear across query variants
-        content_preview = doc.page_content[:100]
-        if content_preview in seen_contents:
-            continue
-        seen_contents.add(content_preview)
-
         source = doc.metadata.get("source", "knowledge base")
         source_name = Path(source).stem.replace("_", " ").title()
         formatted.append(f"[Source {i}: {source_name}]\n{doc.page_content}")
@@ -180,7 +158,7 @@ def format_retrieved_docs(docs: list[Document]) -> str:
     return "\n\n---\n\n".join(formatted)
 
 
-def build_retriever_tool(retriever: MultiQueryRetriever) -> Tool:
+def build_retriever_tool(retriever) -> Tool:
     """
     Wrap the MultiQueryRetriever as a LangChain Tool so that the agent
     can decide when to query the knowledge base.
@@ -201,3 +179,4 @@ def build_retriever_tool(retriever: MultiQueryRetriever) -> Tool:
             "that is not covered by the other specialist tools."
         ),
     )
+
