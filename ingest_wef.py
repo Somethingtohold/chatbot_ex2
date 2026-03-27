@@ -60,8 +60,6 @@ def clean_text(raw: str) -> str:
             cleaned.append(stripped)
 
     text = "\n".join(cleaned)
-    text = re.sub(r"-\n(\w)", r"\1", text)   # fix hyphenated line breaks
-    text = re.sub(r" {3,}", "  ", text)       # collapse extra spaces
     return text.strip()
 
 
